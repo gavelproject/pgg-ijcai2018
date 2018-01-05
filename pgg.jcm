@@ -31,33 +31,42 @@ mas pgg {
 		instances:	100
 		beliefs:		move_strategy(freerider)
 	}
-	agent mean : player.asl {
+	agent utilitarian : player.asl {
 		instances:	100
-		beliefs:		move_strategy(mean)
-	}
-	agent nice : player.asl {
-		instances:	100
-		beliefs:		move_strategy(nice)
+		beliefs:		move_strategy(utilitarian),
+						/*
+						 * This parameter ranges from 0 to 1 and corresponds to
+						 * the reciprocity coefficient used in the utility
+						 * function.
+						 */
+						reciprocity(0.5),
+						/*
+						 * This parameter ranges from 0 to 1 and corresponds to 
+						 * the intensity of choice in the EWA model. If set to
+						 * 1, a small historical advantage for a given move 
+						 * causes that move to be very probable, and if set to
+						 * 0, all moves are equally likely.
+						 */
+						reputation_appreciation(1)
 	}
 	agent manager {
 		beliefs:	benefit_factor(3),
 							group_size(5),
-							max_rounds(100)
+							max_rounds(10)
 		join:			pgg
 	}
+	
 
 	workspace pgg { 
 		artifact de_jure: gavel.jacamo.DeJure("src/org/regulative-spec.xml") {
 			focused-by: cooperator,
 									freerider,
-									mean,
-									nice
+									utilitarian
 		}
 		artifact capability_board: gavel.jacamo.CapabilityBoard() {
 			focused-by: cooperator,
 									freerider,
-									mean,
-									nice
+									utilitarian
 		}
 	}
 

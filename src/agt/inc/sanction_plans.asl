@@ -1,7 +1,11 @@
-+!punish_myself
-<-?cost_being_punished(Cost);
++!punish_myself[source(Punisher)]
+<-	if ( move_strategy(utilitarian) ) {
+		?punishments_received(Punisher, N);
+		-+punishments_received(Punisher, N+1);
+	}
+	?cost_being_punished(Cost);
 	?tokens(OldAmount);
-	-+tokens(OldAmount-Cost).
+	-+tokens(OldAmount-Cost).	
 
 +!gossip(Target,ImgValue)
 <-?players_in_other_groups(ReceiverOptions);

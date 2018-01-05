@@ -1,13 +1,14 @@
 //////////////////// BEGIN SIMULATION PARAMETERS ////////////////////
 cost_to_punish(1).
 cost_being_punished(5).
+max_utility(10).
 tokens(50).
 
 /**
  * Consider efficacy of a sanction application as 'indeterminate' after the
  * given number of rounds has passed since its application.
  */
-indeterminate_efficacy_after(2).
+//indeterminate_efficacy_after(2).
 
 /** Minimal image value to consider an agent as cooperator. */
 min_img_cooperator(0.6).
@@ -22,7 +23,7 @@ max_gossips_per_round(10).
 max_percentage_freeriders(0.2).
 
 /** [gossip|punishment|random_choice|random_threshold] */
-sanction_decision_strategy(gossip).
+sanction_decision_strategy(punishment).
 
 /** The two weights below should sum up to 1. */
 weight_interaction_img(0.8).
