@@ -152,25 +152,10 @@ pending_sanctions(0).
 	.my_name(Me);
 	?tokens(Wealth);
 	?move(Move);
-	?focused(_,PoolName[_],_);
-	.count(pool_member(_),PoolSize);
-	.findall(Defector,contribution(Defector,0),Defectors);
-	.findall(Cooperator,contribution(Cooperator,1),Cooperators);
-	.findall(
-		[Target,SanctionId],
-		applied_sanction(Target,SanctionId,Round),
-		AppliedSanctions
-	);
 	.print(
 		Round,",",
-		Me,",",
 		Wealth,",",
-		Move,",",
-		PoolName,",",
-		PoolSize,",",
-		"\"",Cooperators,"\"",",",
-		"\"",Defectors,"\"",",",
-		"\"",AppliedSanctions,"\""
+		Move
 	).
 
 +!prepare_for_death
