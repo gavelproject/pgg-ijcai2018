@@ -52,7 +52,7 @@ mas pgg {
 	agent manager {
 		beliefs:	benefit_factor(3),
 							group_size(5),
-							max_rounds(10)
+							max_rounds(100)
 		join:			pgg
 	}
 	

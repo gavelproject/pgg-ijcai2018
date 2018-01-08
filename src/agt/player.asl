@@ -1,7 +1,7 @@
 //////////////////// BEGIN SIMULATION PARAMETERS ////////////////////
 cost_to_punish(1).
 cost_being_punished(5).
-max_utility(10).
+max_utility(5).
 tokens(50).
 
 /**
@@ -14,7 +14,7 @@ tokens(50).
 min_img_cooperator(0.6).
 
 /** Maximum number of gossips an agent can make per round. */
-max_gossips_per_round(10).
+max_gossips_per_round(1).
 
 /**
  * If noticed percentage of freeriders in the pool is greater than the number
@@ -23,7 +23,7 @@ max_gossips_per_round(10).
 max_percentage_freeriders(0.2).
 
 /** [gossip|punishment|random_choice|random_threshold] */
-sanction_decision_strategy(punishment).
+sanction_decision_strategy(random_threshold).
 
 /** The two weights below should sum up to 1. */
 weight_interaction_img(0.8).
