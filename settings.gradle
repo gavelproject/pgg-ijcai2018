@@ -22,7 +22,7 @@
  * SOFTWARE.
  *******************************************************************************/
 
-rootProject.name = 'pgg'
+rootProject.name = 'pgg-ijcai208'
 
 include ':gavel'
 project(':gavel').projectDir = new File(settingsDir, '../gavel')
