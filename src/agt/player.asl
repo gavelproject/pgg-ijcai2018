@@ -170,7 +170,7 @@ pending_sanctions(0).
 // (T)arget, (V)alue, (S)ender
 +gossip(T,V)[source(S)] <- putGossip(T,S,V).
 
-{ include("controller_strategy.asl") }
+//{ include("controller_strategy.asl") }
 { include("detector_strategy.asl") }
 { include("evaluator_strategy.asl") }
 { include("move_strategy.asl") }
