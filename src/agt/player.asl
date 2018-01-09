@@ -4,26 +4,14 @@ cost_being_punished(5).
 max_utility(5).
 tokens(50).
 
-/**
- * Consider efficacy of a sanction application as 'indeterminate' after the
- * given number of rounds has passed since its application.
- */
-//indeterminate_efficacy_after(2).
-
 /** Minimal image value to consider an agent as cooperator. */
 min_img_cooperator(0.6).
 
 /** Maximum number of gossips an agent can make per round. */
 max_gossips_per_round(1).
 
-/**
- * If noticed percentage of freeriders in the pool is greater than the number
- * given below, mean and nice agents use their individual active strategies.
- */
-max_percentage_freeriders(0.2).
-
-/** [gossip|punishment|random_choice|random_threshold] */
-sanction_decision_strategy(random_threshold).
+/** [gossip|punishment|random|threshold] */
+sanction_decision_strategy(threshold).
 
 /** The two weights below should sum up to 1. */
 weight_interaction_img(0.8).
@@ -100,7 +88,6 @@ pending_sanctions(0).
 
 +pool_status("RUNNING")
 <-!update_players_in_other_groups;
-	!assess_pool_members_image;
 	!play_move.
 
 +!contribute(Contribution,PoolId)

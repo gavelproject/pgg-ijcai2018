@@ -47,7 +47,7 @@ mas pgg {
 						 * causes that move to be very probable, and if set to
 						 * 0, all moves are equally likely.
 						 */
-						reputation_appreciation(1)
+						reputation_appreciation(0.5)
 	}
 	agent manager {
 		beliefs:	benefit_factor(3),

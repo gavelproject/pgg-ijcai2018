@@ -71,15 +71,6 @@
 	.count(pool_member(_),GroupSize);
 	FRRatio = NumFrs/(GroupSize-1).
 
-+!assess_pool_members_image
-<-	?freeriders_ratio(FRRatio);
-	?max_percentage_freeriders(MaxFrPercent);
-	if (FRRatio > MaxFrPercent) {
-		+too_many_freeriders;
-	} else {
-		+~too_many_freeriders;
-	}.
-
 +move(defect)
 : move_strategy(utilitarian)
 <-	for ( pool_member(Player) & not .my_name(Player) ) {
