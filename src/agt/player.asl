@@ -140,6 +140,7 @@ pending_sanctions(0).
 	?move(Move);
 	.print(
 		Round,",",
+		Me,",",
 		Wealth,",",
 		Move
 	).
